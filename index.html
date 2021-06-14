@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generado de desgradados en css en tiempo real">
+    
+    
+    <!-- Metadata para PWA -->
+    <!-- Modificar color de barra de estado para ANDROID -->
+    <meta name="theme-color" content="#f5f5dc" >
+    <!-- Optimizaciones de SEO -->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true" >
+    <!-- Modificar Barra de Estado en IOS -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-traslucent"  >
+    <!-- Iconos -->
+    <link rel="shortcut icon" href="./img/favicon16.png" type="image/png">
+    <link rel="apple-touch-icon" href="./img/favicon16.png" >
+    <link rel="apple-touch-startup-image" href="./img/favicon16.png" >
+    <title>Gradient</title>
+    <!-- Manifest -->
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <hr>
+
+        <form>
+            <label > Color 1 : <input type="color" v-model="fcolor"> </label>
+            <label > Color 2 : <input type="color" v-model="scolor"> </label>
+        
+        <p>HEX 1 : {{fcolor}}</p>
+        <p>HEX 2 : {{scolor}}</p>
+        <label >
+            <input class="value-css" type="text" :value="setColor"/>
+        </label>
+        
+
+        <br/>
+        <label><input type="radio" value="1" v-model.number="orientation"> Derecha</label>
+        <label><input type="radio" value="2" v-model.number="orientation"> Izquierda</label>
+        <label><input type="radio" value="3" v-model.number="orientation"> Arriba</label>
+        <label><input type="radio" value="4" v-model.number="orientation"> Abajo</label>
+        <br/>
+
+        <div class="area" :style="setColor"></div>    
+    </form>
+    </div>
+    <script src="./load.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/mountApp.js" > </script>
+</body>
+</html>
